@@ -1,0 +1,468 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("service-bg.jpg");
+    background-size: cover; /* تغطي الشاشة بالكامل */
+    background-repeat: no-repeat; /* لا تتكرر */
+    background-position: center; /* تظهر في الوسط */
+    background-attachment: fixed; /* ثابتة عند التمرير */
+    background-size: 100% 500px; /* العرض والارتفاع */
+  }
+
+  .overlay{
+    position: absolute; /* نفس سلوك الخلفية */
+      top: 0;
+      left: 0;
+      width: 100%; /* يغطي العرض بالكامل */
+      height: 580px; /* يغطي الارتفاع بالكامل */
+      background-color: rgba(0, 0, 0, 0.5); /* لون التراكب بشفافية 50% */
+      pointer-events: none; /* للسماح بالنقر على العناصر الموجودة أسفل التراكب */ 
+}
+
+.div{
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.678);
+    color: white;
+    padding-top: 2%;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    text-align: center;
+    margin-top: 27%;
+    i{
+        margin: 0 3%;
+    }
+}
+
+
+header .social{
+    background-color: blue;
+    color: white;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 40px;
+   
+}
+
+header .social i{
+    margin: 10px 9px;
+    
+}
+
+header .social i.fa-facebook-f{
+    margin-left: 1%;
+}
+
+header .social i.fa-google-plus-g {
+    border-right: 1px solid white; /* إضافة الحد */
+    padding-right: 10px;
+}
+
+span.Adress {
+    margin-right: 400px; /* إزاحة العنصر */
+}
+
+nav {
+    position: relative;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  nav .tredex img {
+    height: 70px;
+    margin-left: 40%;
+  }
+  
+  nav ul {
+    display: flex;
+    list-style: none;
+    gap: 44px;
+    margin-right: 9%;
+    position: relative;
+  }
+  
+  nav.fixed{
+    position: fixed;
+    top: 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل عند التثبيت */
+  }
+  
+  nav ul li {
+    position: relative;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+  }
+  
+  /* تأثير hover فقط على العنصر الذي يتم التفاعل معه */
+  nav ul li:hover > a {
+    color: #0004ff;
+  }
+  
+  /* تصميم قائمة home الفرعية */
+  .home {
+    position: absolute;
+    top: 100%; /* تظهر أسفل العنصر */
+    left: 0; /* محاذاة من اليسار */
+    text-align: left; /* المحتوى محاذٍ لليسار */
+    background-color: #fff;
+    color: black;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%); /* تبدأ من اليسار */
+    transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 100;
+    width: 250px; /* زيادة العرض */
+    border-top: 4px solid #0004ff; /* إضافة خط أزرق أعلى */
+  }
+  
+  .home h3 {
+    font-weight: normal;
+    margin: 10px 0;
+    transition: color 0.3s ease;
+  }
+  
+  .home hr {
+    width: 100%;
+    margin: 5px 0;
+  }
+  
+  /* إظهار قائمة home مع تأثير الحركة */
+  nav ul li:hover .home {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0); /* تتحرك إلى موضعها الطبيعي */
+  }
+  
+  .home:hover h3{
+    color: #0004ff;
+  }
+ 
+  .contact-info{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    height: auto;
+    position: relative;
+padding-top: 10%;
+    justify-content: center;
+    gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+
+} 
+
+.text-with-lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* المسافة بين النص والخطوط */
+  }
+  
+  .left-lines-container {
+    display: flex;
+    flex-direction: column; /* ترتيب الخطوط عموديًا */
+    gap: 5px; /* المسافة بين الصفوف العلوية والسفلية */
+    direction: rtl;
+  }
+
+  .right-lines-container {
+    display: flex;
+    flex-direction: column; /* ترتيب الخطوط عموديًا */
+    gap: 5px; /* المسافة بين الصفوف العلوية والسفلية */
+  }
+  
+  .lines {
+    display: flex;
+    flex-direction: column; /* ترتيب الخطوط في كل صف */
+    gap: 5px; /* المسافة بين الخطين في كل صف */
+  }
+  
+  .top-lines hr {
+    width: 50px; /* طول الخطوط العلوية */
+    height: 2px; /* سمك الخط */
+    background-color: #0004ff; /* لون الخط */
+    border: none;
+  }
+  
+  .bottom-lines hr {
+    width: 90px; /* طول الخطوط السفلية */
+    height: 2px; /* سمك الخط */
+    background-color: #2f00ff; /* لون الخط */
+    border: none;
+  }
+  
+  .contact-info h1{
+    font-size: 40px;
+  }
+  .contact {
+    display: flex; /* يجعل العناصر بجانب بعضها */
+    justify-content: space-between; /* يوزع المسافة بين العناصر */
+    padding-top: 5%;
+    margin: 0 8%;
+  }
+  .Call-Us{
+    margin-right: 5%;
+  }
+  
+  .contact > div {
+    text-align: center; /* يركز العناصر داخل كل div */
+  }
+  
+  .contact i {
+    font-size: 2rem; /* تحديد حجم الأيقونة */
+    margin-bottom: 10px; /* إضافة مسافة بين الأيقونة والعنوان */
+    color: #0059ff;
+  }
+  
+  .contact h2 {
+    margin: 5px 0; /* إضافة مسافة بين العنوان والنص */
+  }
+  
+  .contact p {
+    font-size: 1rem; /* تحديد حجم الخط للنص */
+    margin-top: 5px; /* إضافة مسافة بين النص والعنوان */
+  }
+
+  .get-in-touch{
+     width: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    height: auto;
+    position: relative;
+padding-top: 10%;
+    justify-content: center;
+    gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+  }
+
+  .get-in-touch h1{
+    font-size: 40px;
+  }
+
+  form input {
+    width: 20%;
+    margin: 25px;
+    border: none;
+    border-radius: 0px;
+    font-size: 16px;
+    border-bottom: 2px solid rgb(184, 182, 182);
+    outline: none;
+}
+
+form button {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 40px;
+    background-color:rgb(0, 81, 255);
+    color: white;
+    transition: background-color 0.3s ease ;
+    width: 20%;
+    margin: 25px;
+
+    &:hover {
+     background-color: black ; 
+    }
+  }
+  /* تنسيق الـ textarea ليأخذ شكل الـ input */
+textarea {
+    width: 100%;
+    height: 40px; /* تحديد الارتفاع لتقليل المسافة */
+    border: 1px solid #ccc; /* مثل الـ input */
+    padding: 8px;
+    font-size: 1rem;
+    margin-bottom: 10px; /* إضافة مسافة أسفل الـ textarea */
+    box-sizing: border-box;
+}
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* تنسيق الرسالة عند حدوث خطأ */
+#error-message {
+    color: red;
+    margin-top: 15px;
+    font-size: 1rem;
+}
+
+.concluion {
+    display: flex; /* لجعل الأقسام الثلاثة جنبًا إلى جنب */
+    justify-content: space-between; /* توزيع الأقسام مع وجود مسافات متساوية */
+    gap: 20px; /* مسافة بين الأقسام */
+    padding: 20px;
+    background-color: #161616;
+    position: relative;
+  
+    .Contact-Info {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10%;
+      margin-left: 10%;
+      h2 {
+        color: white;
+        font-size: 24px;
+      }
+      hr {
+        width: 13%;
+        background-color: #0004ff;
+        border: none;
+        height: 3px;
+        margin-top: 3%;
+      }
+      .location, .phone, .email {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 10px;
+        margin-top: 5%;
+        color: white;
+      }
+    }
+  
+    .Posts {
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      margin-top: 9%;
+  
+      h2 {
+        color: white;
+        font-size: 24px;
+      }
+      .line {
+        width: 10%;
+        background-color: #0004ff;
+        border: none;
+        height: 3px;
+      }
+      hr{
+        width: 90%;
+        color: #666;
+      }
+      
+      .small-card {
+        display: flex;
+        flex-direction: row; /* الصورة بجانب النص */
+        align-items: center; /* محاذاة عمودية للصورة والنص */
+        gap: 10px;
+       
+        
+  
+        img {
+          width: 80px; /* حجم الصورة */
+          height: 80px; /* الحفاظ على شكل مربع */
+          object-fit: cover;
+        }
+  
+        .small-content {
+          display: flex;
+          flex-direction: column;
+          flex-grow: 1;
+          font-size: 12px;
+          color: white;
+          text-align: start;
+         
+  
+          h4 {
+            font-size: 14px;
+            margin-bottom: 5px;
+            width: 80%;
+          }
+  
+          .date {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 12px;
+            color: #666;
+          }
+        }
+      }
+    }
+  
+    .Popular {
+      width: 40%;
+      display: flex;
+      flex-direction: column; /* ترتيب العناصر عموديًا */
+      gap: 10px;
+      margin-top: 9%;
+    
+      h2 {
+        color: #fff;
+        font-size: 24px;
+      }
+    
+      hr {
+        width: 10%; /* عرض كامل */
+        background-color: #0004ff; /* لون الخط */
+        border: none; /* إزالة الإطار الافتراضي */
+        height: 2px; /* سمك الخط */
+      }
+    
+      button {
+        padding: 10px 20px;
+        font-size: 14px;
+        border-radius: 40px;
+        background-color: white;
+        color: black;
+        transition: background-color 0.3s ease , color 0.3s ease;
+    
+        &:hover {
+         background-color: rgb(0, 81, 255);
+         color: white;
+          
+        }
+      }
+    } 
+  }
+  
+  footer{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    align-items: center;
+    text-align: center;
+    background-color: #161616;
+    box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2); /* ظل من الأعلى */
+    padding-top: 2%;
+  
+    a{
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 13px;
+      color: rgb(0, 109, 211);
+    }
+  }

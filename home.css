@@ -1,0 +1,1182 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("service-bg.jpg");
+    background-size: cover; /* تغطي الشاشة بالكامل */
+    background-repeat: no-repeat; /* لا تتكرر */
+    background-position: center; /* تظهر في الوسط */
+    background-attachment: fixed; /* ثابتة عند التمرير */
+    background-size: 100% auto; /* العرض والارتفاع */
+  }
+.overlay{
+    position: fixed; /* نفس سلوك الخلفية */
+   
+      top: 0;
+      left: 0;
+      width: 100%; /* يغطي العرض بالكامل */
+      height: 100%; /* يغطي الارتفاع بالكامل */
+      background-color: rgba(0, 0, 0, 0.5); /* لون التراكب بشفافية 50% */
+      pointer-events: none; /* للسماح بالنقر على العناصر الموجودة أسفل التراكب */ 
+}  
+
+header .social{
+    background-color: blue;
+    color: white;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    height: 40px;
+   
+}
+
+header .social i{
+    margin: 10px 9px;
+    
+}
+
+header .social i.fa-facebook-f{
+    margin-left: 1%;
+}
+
+header .social i.fa-google-plus-g {
+    border-right: 1px solid white; /* إضافة الحد */
+    padding-right: 10px;
+}
+
+span.Adress {
+    margin-right: 400px; /* إزاحة العنصر */
+}
+
+
+/* تصميم الـ nav */
+nav {
+  position: relative;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+nav .tredex img {
+  height: 70px;
+  margin-left: 40%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 44px;
+  margin-right: 9%;
+  position: relative;
+}
+
+nav.fixed{
+  position: fixed;
+  top: -1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* إضافة ظل عند التثبيت */
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+/* تأثير hover فقط على العنصر الذي يتم التفاعل معه */
+nav ul li:hover > a {
+  color: #0004ff;
+}
+
+/* تصميم قائمة home الفرعية */
+.home {
+  position: absolute;
+  top: 100%; /* تظهر أسفل العنصر */
+  left: 0; /* محاذاة من اليسار */
+  text-align: left; /* المحتوى محاذٍ لليسار */
+  background-color: #fff;
+  color: black;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(-50%); /* تبدأ من اليسار */
+  transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+  z-index: 100;
+  width: 250px; /* زيادة العرض */
+  border-top: 4px solid #0004ff; /* إضافة خط أزرق أعلى */
+}
+
+.home h3 {
+  font-weight: normal;
+  margin: 10px 0;
+  transition: color 0.3s ease;
+}
+
+.home hr {
+  width: 100%;
+  margin: 5px 0;
+}
+
+/* إظهار قائمة home مع تأثير الحركة */
+nav ul li:hover .home {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(0); /* تتحرك إلى موضعها الطبيعي */
+}
+
+.home:hover h3{
+  color: #0004ff;
+}
+
+  
+.About-Us{
+    width: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    height: auto;
+    position: relative;
+    margin-top: 40% ;
+    justify-content: center;
+    gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+
+} 
+
+.text-with-lines {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* المسافة بين النص والخطوط */
+  }
+  
+  .left-lines-container {
+    display: flex;
+    flex-direction: column; /* ترتيب الخطوط عموديًا */
+    gap: 5px; /* المسافة بين الصفوف العلوية والسفلية */
+    direction: rtl;
+  }
+
+  .right-lines-container {
+    display: flex;
+    flex-direction: column; /* ترتيب الخطوط عموديًا */
+    gap: 5px; /* المسافة بين الصفوف العلوية والسفلية */
+  }
+  
+  .lines {
+    display: flex;
+    flex-direction: column; /* ترتيب الخطوط في كل صف */
+    gap: 5px; /* المسافة بين الخطين في كل صف */
+  }
+  
+  .top-lines hr {
+    width: 50px; /* طول الخطوط العلوية */
+    height: 2px; /* سمك الخط */
+    background-color: #0004ff; /* لون الخط */
+    border: none;
+  }
+  
+  .bottom-lines hr {
+    width: 90px; /* طول الخطوط السفلية */
+    height: 2px; /* سمك الخط */
+    background-color: #2f00ff; /* لون الخط */
+    border: none;
+  }
+  
+  .About-Us h1{
+    font-size: 40px;
+  }
+ 
+  .About-Us h4{
+    font-size: 20px;
+    font-weight: normal;
+    margin: 3% 0;
+    
+  }
+
+  .body-About{
+    display: flex;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    margin-left: 30%;
+ 
+
+  .About-Us img {
+    width: 40%;
+    height: 500px;
+    
+  }
+  .Text{
+    justify-content: space-between;
+    flex-direction: column;
+    
+    text-align: left;
+    flex-wrap: wrap;
+   }
+   .Text p{
+   font-weight: normal;
+    font-size: 19px;
+   
+    width: 53%;
+    margin-bottom: 5%;
+    color: #888888;
+   }
+ 
+  .card-Marketing{
+    position: absolute;
+    background-color: #ffffff;
+    width: 27%;
+    height: auto;
+    margin-left: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    top:25%  ;
+    left: 0;
+    
+   
+   
+
+
+    .Marketing{
+      width: 100%;
+      margin: 3% 1%;
+      display: flex;
+
+
+      .fa-bullhorn{
+        margin: 0 3%;
+        margin-top: 9%;
+        padding-left: 5%;
+        padding-right: 15%;
+        font-size: 27px;
+        width: 10%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        transition: color 0.3s ease;
+      }
+     .colum-text{
+      display: flex;
+      margin-top:4%;
+      flex-direction: column; /* يجعل h3 فوق p */
+      border-left: 1px solid #888888;
+      h3{
+        text-align: left;
+        padding-left: 10px;
+        font-size: 17px;
+        transition: color 0.3s ease;
+      }
+      p{
+        width: 90%;
+        text-align: left;
+        padding-left: 10px;
+        margin-top: 3%;
+        color: #888888;
+        font-size: 13px;
+      }
+     }
+    }
+
+    .Marketing:hover {
+    color: #0004ff;
+    }
+
+    .Great-Usability{
+      width: 100%;
+      margin: 3% 1%;
+      display: flex;
+
+      .fa-sliders{
+        margin: 0 3%;
+        margin-top: 9%;
+        padding-left: 5%;
+        padding-right: 15%;
+        font-size: 30px;
+        width: 10%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        transition: color 0.3s ease;
+      }
+      .colum-text{
+        display: flex;
+        margin-top:4%;
+        flex-direction: column; /* يجعل h3 فوق p */
+        border-left: 1px solid #888888;
+        h3{
+          text-align: left;
+          padding-left: 10px;
+          font-size: 17px;
+          transition: color 0.3s ease;
+        }
+        p{
+          width: 90%;
+          text-align: left;
+          padding-left: 10px;
+          margin-top: 3%;
+          color: #888888;
+          font-size: 13px;
+
+        }
+       }
+    }
+    .Great-Usability:hover {
+      color: #0004ff;
+      }
+
+    .Uniq-Design{
+      width: 100%;
+      margin: 3% 1%;
+      display: flex;
+     
+      .fa-pen-to-square{
+        margin: 0 3%;
+        margin-top: 9%;
+        padding-left: 5%;
+        padding-right: 15%;
+        font-size: 30px;
+        width: 10%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        transition: color 0.3s ease;
+      }
+      .colum-text{
+        display: flex;
+        margin-top:4%;
+        flex-direction: column; /* يجعل h3 فوق p */
+        border-left: 1px solid #888888;
+        h3{
+          text-align: left;
+          padding-left: 10px;
+          font-size: 17px;
+          transition: color 0.3s ease;
+        }
+        p{
+          width: 90%;
+          text-align: left;
+          padding-left: 10px;
+          margin-top: 3%;
+          color: #888888;
+          font-size: 13px;
+
+        }
+       }
+    }
+    .Uniq-Design:hover {
+      color: #0004ff;
+      }
+    .quick-powerful{
+      width: 100%;
+      margin: 3% 1%;
+      display: flex;
+
+      .fa-thumbs-up{
+        margin: 0 3%;
+        margin-top: 9%;
+        padding-left: 5%;
+        padding-right: 15%;
+        font-size: 30px;
+        width: 10%;
+        height: auto;
+        align-items: center;
+        text-align: center;
+        transition: color 0.3s ease;
+      }
+      .colum-text{
+        display: flex;
+        margin-top:4%;
+        flex-direction: column; /* يجعل h3 فوق p */
+        border-left: 1px solid #888888;
+        h3{
+          text-align: left;
+          padding-left: 10px;
+          font-size: 17px;
+          transition: color 0.3s ease;
+        }
+        p{
+          width: 90%;
+          text-align: left;
+          padding-left: 10px;
+          margin-top: 3%;
+          color: #888888;
+          font-size: 13px;
+        }
+       }
+    }
+    .quick-powerful:hover {
+      color: #0004ff;
+      }
+  }
+}
+
+.body-About button {
+  position: relative; /* لتمكين التحكم بالعنصر الزائف */
+  padding: 10px 20px;
+  width: 20%;
+  font-size: 14px;
+  border-radius: 40px;
+  background-color: rgb(30, 14, 255);
+  color: white;
+  border: none; /* إزالة الإطار */
+  cursor: pointer;
+  overflow: hidden; /* منع تجاوز التأثير خارج الزر */
+  transition: color 0.3s ease; /* تأثير على لون النص */
+}
+
+.body-About button::before {
+  content: ""; /* عنصر زائف */
+  position: absolute;
+  top: 0;
+  left: -40%; /* يبدأ من خارج الزر على اليسار */
+  width: 20%; /* عرض الطبقة الزجاجية */
+  height: 100%; /* يغطي الزر عموديًا */
+  background: rgba(255, 255, 255, 0.274); /* لون زجاجي */
+  backdrop-filter: blur(5px); /* تأثير الزجاجية */
+  transform: skewX(-30deg); /* ميل الطبقة */
+  transition: left 0.5s ease; /* تأثير الحركة */
+}
+
+.body-About button:hover::before {
+  left: 100%; /* يتحرك إلى يمين الزر */
+  
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  padding: 50px 20px;
+  background-color: white;
+  margin-top: 10%;
+  width: 100%;
+}
+
+.stat-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: calc(100/4) ;
+  flex-direction: row;
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  text-align: start;
+}
+
+.small{
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  font-size: 12px;
+  width: 50%;
+}
+
+
+.stat-box i {
+  font-size: 40px;
+  color: #007bff;
+  margin: 10%;
+  align-items: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.stat-box h2 {
+  font-size: 20px;
+  margin: 10px 0;
+  color: black;
+}
+
+.stat-box p {
+  font-size: 16px;
+  color: gray;
+}
+
+.Our-Services{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  height: auto;
+  display: flex; /* هذا سيساعد على تنظيم المحتوى بشكل أفقي وعمودي */
+  flex-direction: column; /* لتوزيع العناصر عموديًا */
+  position: relative;
+  justify-content: center;
+  gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+ margin-bottom: 20%;
+}
+
+.text-with-lines{
+  margin-top: 6%;
+}
+.Our-Services h1{
+  font-size: 30px;
+  width: 50%;
+  color: #ffffff;
+}
+
+.Our-Services .paragraph {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 3% 0;
+  color: #ffffff;
+  width: 70%;
+}
+
+.cards-6{
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  width:100% ;
+  height: auto;
+}
+
+.card {
+  position: relative;
+  width: 28%;
+  height: 200px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease;
+}
+
+.card:hover {
+ color: #ffffff;
+ background-color: #ffffff;
+}
+
+.card-icon {
+  font-size: 30px;
+  color: white;
+  width: 100%;
+  transition: color 0.3s ease; /* تأثير الانتقال للون النص */
+}
+
+.card-icon h3 {
+  color: white; /* اللون الافتراضي للنص */
+  transition: color 0.3s ease; /* تأثير الانتقال للنص */
+}
+
+.card:hover .card-icon {
+  color: white; /* لون الأيقونة عند التمرير */
+}
+
+.card:hover .card-icon h3 {
+  color: white; /* لون النص داخل h3 عند التمرير */
+}
+
+.card-text {
+  position: absolute;
+  text-align: center;
+  bottom: -25px;
+  color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease, bottom 0.3s ease;
+  h3{
+    font-size: 30px;
+  }
+  p{
+    margin-top: 6%;
+    width: 93%;
+    text-align: center;
+    padding-left: 10%;
+  }
+   button {
+    position: relative; /* لتمكين التحكم بالعنصر الزائف */
+    padding: 10px 20px;
+    width: 40%;
+    margin-top: 4%;
+    font-size: 14px;
+    border-radius: 40px;
+    background-color: rgb(30, 14, 255);
+    color: white;
+    border: none; /* إزالة الإطار */
+    cursor: pointer;
+    overflow: hidden; /* منع تجاوز التأثير خارج الزر */
+    transition: color 0.3s ease; /* تأثير على لون النص */
+  }
+  
+   button::before {
+    content: ""; /* عنصر زائف */
+    position: absolute;
+    top: 0;
+    left: -40%; /* يبدأ من خارج الزر على اليسار */
+    width: 20%; /* عرض الطبقة الزجاجية */
+    height: 100%; /* يغطي الزر عموديًا */
+    background: rgba(255, 255, 255, 0.274); /* لون زجاجي */
+    backdrop-filter: blur(5px); /* تأثير الزجاجية */
+    transform: skewX(-30deg); /* ميل الطبقة */
+    transition: left 0.5s ease; /* تأثير الحركة */
+  }
+  
+   button:hover::before {
+    left: 100%; /* يتحرك إلى يمين الزر */
+    
+  }
+  
+}
+
+.card:hover .card-text {
+  opacity: 1;
+  bottom: 10px;
+  color: black;
+ }
+}
+
+.Our-Work{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  height: auto;
+  position: relative;
+  margin-top: 40% ;
+  justify-content: center;
+  gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+  
+}
+
+  .text-with-lines {
+    margin-top: 6%;
+}
+
+.Our-Work h1 {
+  font-size: 40px;
+}
+
+
+.Our-Work p {
+  font-size: 15px;
+  font-weight: normal;
+  width: 60%;
+  margin-left: 20%;
+  margin-top: 5%;
+}
+
+.header-Work .filter-buttons{
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-left: 33%;
+  margin-top: 3%;
+  font-size: 15px;
+}
+
+.header-Work .filter-buttons li a{
+text-decoration: none;
+  color: black;
+  transition: color 0.3s ease;
+}
+
+li a span {
+  margin-left: 20px; /* مسافة بين النص وعلامة "/" */
+  margin-right: 5px; /* مسافة بين العلامة "/" والنص التالي */
+  
+}
+
+
+.header-Work .filter-buttons li:hover > a{
+  color: #2f00ff;
+}
+
+.header-Work .filter-buttons .filter-btn a.active {
+  color: #2f00ff;
+}
+
+.cards-6{
+  .flex-card {
+    margin-top: 10%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    width:100% ;
+    height: 800px;
+    
+  }
+  
+  .card-filter {
+    position: relative;
+  width: 28%;
+  height: 200px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .img {
+    font-size: 30px;
+    width: 100%;
+    transition: color 0.3s ease, box-shadow 0.3s ease; /* تأثير الانتقال للون النص */
+   
+  }
+
+  .card-filter img{
+    border-radius: 2%;
+    transition: color 0.3s ease, box-shadow 0.3s ease; /* تأثير الانتقال للون النص */
+  }
+  
+  .card-filter.active {
+    opacity: 1; /* إظهار البطاقة عند إضافة الكلاس active */
+    pointer-events: auto; /* السماح بالتفاعل مع البطاقات التي تم عرضها */
+  }
+  
+  
+  .card-filter:hover img {
+    box-shadow: -5px 5px 20px 10px rgba(0, 0, 1, 0.26);;
+  }
+  
+  
+  
+  .filter {
+    position: absolute;
+    margin-top: 60%;
+    border-radius: 5%;
+    color: white;
+    width: 80%;
+    background-color: #00c3ff80;
+    opacity: 0;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    display: flex; /* استخدام Flexbox */
+    flex-direction: column; /* ترتيب العناصر عمودياً */
+    gap: 10px; /* مسافة بين العناصر */
+  
+    h4 {
+      font-size: 15px;
+      text-align: left; /* محاذاة النصوص لليسار */
+      margin-top:  5%;
+     align-items: flex-start;
+     margin-left: 10%;
+    }
+    p {
+      margin-top:  3%;/* إزالة الحشو الداخلي وتحديد المسافة */
+      text-align: left; /* محاذاة النصوص لليسار */
+      font-size: 20px;
+      margin-left: 10%;
+    }
+    .fa-plus {
+      align-items: center;
+      margin-right: 10%;
+      font-size: 20px;
+      align-self: flex-end;
+    }
+  }
+  
+  
+  .card-filter:hover .filter {
+    opacity: 1;
+   }
+  }
+ 
+.our-pricing{
+  width: 100%;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    height: auto;
+    position: relative;
+    justify-content: center;
+    gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+}
+
+.text-with-lines{
+  margin-top: 6%;
+}
+.our-pricing h1{
+  font-size: 40px;
+}
+
+.our-pricing p {
+  font-size: 15px;
+  font-weight: normal;
+  width: 70%;
+  margin-top: 5%;
+  margin-left: 15%;
+}
+
+.Testimonial{
+  width: 100%;
+  align-items: center;
+  text-align: center;
+  background-color: #ffffff;
+  height: auto;
+  position: relative;
+  justify-content: center;
+  gap: 10px; /* المسافة بين الخط والنص */
+overflow: hidden;
+.text-with-lines{
+  margin-top: 6%;
+ }
+.Testimonial h1{
+  font-size: 40px;
+ }
+}
+
+.Latest-Blog {
+  width: 100%;
+  text-align: center;
+  background-color: #ffffff;
+  padding: 20px 0;
+  position: relative;
+}
+
+.Latest-Blog h1 {
+  font-size: 40px;
+  margin-bottom: 20px;
+}
+
+.Latest-Blog p {
+  font-size: 15px;
+  font-weight: normal;
+  width: 60%;
+  margin: 0 auto 30px;
+}
+
+.cards-3 {
+  display: flex;
+  flex-wrap: wrap; /* يسمح للكروت بالانتقال للسطر التالي إذا لم يكن هناك مساحة كافية */
+  gap: 25px; /* مسافة بين الكروت */
+  justify-content: center; /* توسيط الكروت في الحاوية */
+  width: 100%;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  width: 27%; /* عرض كل كارت 30% من عرض الحاوية */
+  min-width: 250px; /* ضمان أن الكروت لا تصغر كثيرًا */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* إخفاء أي جزء من الصورة يتجاوز حدود الكارت */
+  background-color: #fff;
+  position: relative; /* لجعل الصورة تتأثر مع التحولات */
+}
+
+.cards .overflow{
+  overflow: hidden;
+}
+
+.cards img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease; /* تأثير التحول عند التمرير */
+}
+
+.cards:hover img {
+  transform: scale(1.1) rotate(-5deg); /* تكبير الصورة وتدويرها عند التمرير */
+}
+
+.cards .content {
+  display: flex;
+  flex-direction: row;
+}
+
+.cards .side {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* محاذاة المحتوى عموديًا */
+  align-items: center;
+  background-color: black;
+  color: white;
+  width: 10%; /* عرض القسم الجانبي */
+  transition: background 0.3s ease;
+}
+
+.cards:hover .side{
+  background-color: blue;
+}
+
+.cards .side .icon {
+  display: flex;
+  flex-direction: column; /* توزيع الأيقونات عموديًا */
+  gap: 20px; /* مسافة بين الأيقونات */
+  transition: color 0.3s ease;
+  
+}
+
+
+
+.cards .card-content {
+  padding: 15px;
+  text-align: left;
+  width: 100%; /* عرض القسم النصي */
+}
+
+.cards .card-content h3 {
+  font-size: 18px;
+  color: black;
+  margin-bottom: 10px;
+  width: 90%;
+  transition: color 0.3s ease;
+}
+
+.cards .card-content h3:hover{
+  color: blue;
+}
+
+.cards .text-with-icon {
+  display: flex;
+  gap: 20px;
+  color: rgba(71, 67, 67, 0.562);
+  font-size: 12px;
+  flex-wrap: nowrap;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+.cards .text-with-icon .user {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  gap: 9px;
+  border-right: 1px solid rgba(71, 67, 67, 0.562);
+  width: 50%;
+  transition: color 0.3s ease;
+}
+
+.cards .text-with-icon .user:hover{
+  color: blue;
+}
+
+.cards .text-with-icon .date {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 50%;
+  gap: 5px;
+  transition: color 0.3s ease;
+}
+
+.cards .text-with-icon .date:hover{
+  color: #0004ff;
+}
+
+.cards .hr {
+  margin: 10px 0;
+  width: 100%;
+  border-bottom: 0.5px solid rgba(71, 67, 67, 0.562);
+}
+
+.cards .content .card-content .hr hr {
+  width: 20%;
+  height: 3px;
+  color: #0004ff;
+  background-color: #0004ff;
+  transition: width 0.3s ease;
+}
+
+.cards .content .card-content:hover .hr hr{
+width: 100%;
+}
+
+.cards p {
+  font-size: 14px;
+  color: rgba(71, 67, 67, 0.8);
+  line-height: 1.6;
+  margin-bottom: 15px;
+  text-align: left;
+  width: 100%;
+  padding-right: 20%;
+}
+
+.cards .button {
+  display: flex;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.cards .button:hover {
+  color: #0004ff;
+}
+
+
+.concluion {
+  display: flex; /* لجعل الأقسام الثلاثة جنبًا إلى جنب */
+  justify-content: space-between; /* توزيع الأقسام مع وجود مسافات متساوية */
+  gap: 20px; /* مسافة بين الأقسام */
+  padding: 20px;
+  background-color: #161616;
+  position: relative;
+
+  .Contact-Info {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10%;
+    margin-left: 10%;
+    h2 {
+      color: white;
+      font-size: 24px;
+    }
+    hr {
+      width: 13%;
+      background-color: #0004ff;
+      border: none;
+      height: 3px;
+      margin-top: 3%;
+    }
+    .location, .phone, .email {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 10px;
+      margin-top: 5%;
+      color: white;
+    }
+  }
+
+  .Posts {
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 9%;
+
+    h2 {
+      color: white;
+      font-size: 24px;
+    }
+    .line {
+      width: 10%;
+      background-color: #0004ff;
+      border: none;
+      height: 3px;
+    }
+    hr{
+      width: 90%;
+      color: #666;
+    }
+    
+    .small-card {
+      display: flex;
+      flex-direction: row; /* الصورة بجانب النص */
+      align-items: center; /* محاذاة عمودية للصورة والنص */
+      gap: 10px;
+     
+      
+
+      img {
+        width: 80px; /* حجم الصورة */
+        height: 80px; /* الحفاظ على شكل مربع */
+        object-fit: cover;
+      }
+
+      .small-content {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        font-size: 12px;
+        color: white;
+        text-align: start;
+       
+
+        h4 {
+          font-size: 14px;
+          margin-bottom: 5px;
+          width: 80%;
+        }
+
+        .date {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-size: 12px;
+          color: #666;
+        }
+      }
+    }
+  }
+
+  .Popular {
+    width: 40%;
+    display: flex;
+    flex-direction: column; /* ترتيب العناصر عموديًا */
+    gap: 10px;
+    margin-top: 9%;
+  
+    h2 {
+      color: #fff;
+      font-size: 24px;
+    }
+  
+    hr {
+      width: 10%; /* عرض كامل */
+      background-color: #0004ff; /* لون الخط */
+      border: none; /* إزالة الإطار الافتراضي */
+      height: 2px; /* سمك الخط */
+    }
+  
+    button {
+      padding: 10px 20px;
+      font-size: 14px;
+      border-radius: 40px;
+      background-color: white;
+      color: black;
+      transition: background-color 0.3s ease , color 0.3s ease;
+  
+      &:hover {
+       background-color: rgb(0, 81, 255);
+       color: white;
+        
+      }
+    }
+  } 
+}
+
+footer{
+  position: relative;
+  width: 100%;
+  height: 80px;
+  align-items: center;
+  text-align: center;
+  background-color: #161616;
+  box-shadow: 0px -4px 6px rgba(0, 0, 0, 0.2); /* ظل من الأعلى */
+  padding-top: 2%;
+
+  a{
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    color: rgb(0, 109, 211);
+  }
+}
